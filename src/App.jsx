@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1 style={{ textAlign: "center" }}>VeriTube</h1>
+      <h1 style={{ textAlign: "center" }}>VeriTubes</h1>
       <Login user={user} setUser={setUser} />
 
       {/* Feed de videos */}
