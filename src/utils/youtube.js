@@ -1,4 +1,6 @@
-export const API_KEY = "TU_API_KEY_AQUI"; // Reemplaza con tu API Key
+// src/utils/youtube.js
+
+export const API_KEY = "AIzaSyApZf0bctyw4DJOUdWWnY0m3lLRc60Pmp4"; // Tu nueva API Key
 export const MAX_RESULTS = 10;
 
 export async function fetchYouTubeVideos(searchQuery = "noticias") {
@@ -11,7 +13,6 @@ export async function fetchYouTubeVideos(searchQuery = "noticias") {
 
     const data = await response.json();
 
-    // Mapea los videos al formato que usamos en VideoCard
     return data.items.map((video) => ({
       youtubeId: video.id.videoId,
       title: video.snippet.title,
