@@ -22,7 +22,12 @@ function VideoFeed({ user }) {
   }, []);
 
   return (
-    <div>
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+      gap: "20px",
+      marginTop: "20px"
+    }}>
       {videos.length === 0 ? (
         <p>No hay videos aún.</p>
       ) : (
@@ -33,11 +38,16 @@ function VideoFeed({ user }) {
             title={video.title}
             channel={video.channel}
             user={user}
+            description={video.description} // información extra
           />
         ))
       )}
     </div>
   );
+}
+
+export default VideoFeed;
+
 }
 
 export default VideoFeed;
