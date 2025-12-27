@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Login from "./components/Login";
-import VideoCard from "./components/VideoCard";
+import VideoFeed from "./components/VideoFeed";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -15,16 +15,12 @@ function App() {
   }, []);
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1>VeriTube</h1>
+    <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>VeriTube</h1>
       <Login user={user} setUser={setUser} />
 
-      <VideoCard
-        videoId="dQw4w9WgXcQ"
-        title="¿Este video dice la verdad?"
-        channel="Canal Ejemplo"
-        user={user}
-      />
+      {/* Feed de videos */}
+      <VideoFeed user={user} />
     </div>
   );
 }
